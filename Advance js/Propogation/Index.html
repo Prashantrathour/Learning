@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    li:nth-child(2n){
+        background:red;
+    }
+</style>
+<body>
+    <div class="main" >
+        <ul class="list">
+            <li class="liteg"><Button  >Click</Button></li>
+        </ul>
+    </div>
+</body>
+<script>
+    const list=document.querySelector("ul")
+    list.addEventListener("click",(event)=>{
+        console.log("list click")
+    })
+    
+    
+    document.querySelector("button").addEventListener("click",(e)=>{
+      
+        e.stopImmediatePropagation();
+        console.log("ButtonClick")
+    })
+    document.querySelector("button").addEventListener("click",(e)=>{
+        console.log("ButtonHover")
+    })
+    document.querySelector(".main").addEventListener("click",(e)=>{
+        console.log("main div")
+    })
+</script>
+</html>

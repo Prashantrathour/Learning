@@ -1,0 +1,17 @@
+{
+  "name": "interview-questions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "compose.js",
+  "scripts": {
+    "test-compose": "mocha compose/compose.spec.js",
+    "test-letters": "mocha letters/letters.spec.js",
+    "test-infinite-linked-list": "mocha infinite-linked-list/infinite-linked-list.spec.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^3.2.0"
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    li:nth-child(2n){
+        color: red;
+        background: yellow;
+    }
+    #main{
+        border: 1px solid red;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        gap: 10px;
+    }
+    .box{
+        border: 1px solid red;
+    }
+</style>
+<body>
+    <div id="main"></div>
+    <ul>
+        <li value="1">1</li>
+        <li value="2">2</li>
+        <li value="3">3</li>
+        <li value="4">4</li>
+    </ul>
+    <input type="number">
+    <button>sumit</button>
+</body>
+<script>
+   let main= document.getElementById("main")
+   main.innerHTML=""
+    document.querySelector("ul").addEventListener("click",(e)=>{
+       main.innerHTML+=`<p>${"list"+e.target.value+"Clicked"}</p>`
+
+    })
+    let str=""
+    document.querySelector("input").addEventListener("change",(e)=>{
+       str+=e.target.value
+    })
+
+    document.querySelector("button").addEventListener("click",()=>{
+        console.log(str)
+        main.innerHTML=""
+        main.innerHTML=str.split('').map((i)=>{
+            return `<div class="box">${i}</div>`
+        }).join("")
+    })
+</script>
+</html>

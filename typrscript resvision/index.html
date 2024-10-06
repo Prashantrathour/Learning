@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    li:nth-child(2n){
+        background-color: aqua;
+    }
+    li:nth-child(3n+1){
+        background-color: rgb(212, 19, 32);
+    }
+    .numberdiv{
+        display: flex;
+width: 50px;
+height: 50px;
+padding: 4px;
+border: 1px solid black;
+justify-content: center;
+    }
+    #inputcontainer{
+        display: flex;
+        width: 100%;
+        gap: 20px;
+    }
+    p{
+        margin: auto;
+        
+    }
+</style>
+<body>
+    <div  id="main">
+
+    </div>
+    <div>
+        <ul  >
+            <li   value="1">1</li>
+            <li  value="2">2</li>
+            <li  value="3">3</li>
+            <li  value="4">4</li>
+        </ul>
+    </div>
+    <div>
+        <div id="inputcontainer">
+
+        </div>
+        <input type="number">
+        <button onclick="submit()">Submit</button>
+    </div>
+</body>
+<script>
+   
+    const main = document.querySelector('#main');
+    main.innerHTML=""
+const handleClick=(e)=>{
+     
+    }
+    document.querySelector("ul").addEventListener('click',(e)=>{
+
+main.innerHTML+=`<p>${e.target.value} selelcted</p>`;
+    })
+    let  number=""
+    document.querySelector("input").addEventListener("change",handleinput)
+    function handleinput(e){
+       number=""
+        number+=e.target.value;
+    }
+const inputcontainer=document.getElementById("inputcontainer")
+
+    const submit=()=>{
+        inputcontainer.innerHTML=""
+        inputcontainer.innerHTML=number.split("").map((item)=>{
+        return `<div class="numberdiv"><p>${item}</p></div>`
+       }).join("")
+    }
+</script>
+</html>

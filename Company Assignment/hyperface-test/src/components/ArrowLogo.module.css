@@ -1,0 +1,10 @@
+.arrow{
+    background-color: tomato;
+    border-radius: 50%;
+    padding: 0px 20px;
+    color: white;
+}
+
+.arrow > p {
+    transform: rotate(-45deg);
+}

@@ -1,0 +1,46 @@
+.container{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo > p {
+    font-size: 25px;
+    color: gray;
+}
+
+.logo > h3{
+    color: tomato;
+}
+
+.linksCont{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 500;
+}
+
+.linksCont > div{
+    cursor: pointer;
+    color: gray;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.authCont{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    font-weight: 500;
+    color: black;
+}

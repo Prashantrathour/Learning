@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+.main{
+
+    width: 100vh;
+    height: 400px;
+    background: skyblue;
+    animation-name: main;
+    animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border-radius: 50%;
+  /* border: 5px dashed red; */
+    
+}
+@keyframes main 
+{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.circle{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background: palevioletred;
+    animation-name: circlemove;
+    animation-duration: 0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    /* border: 2px dashed olive; */
+    
+}
+
+@keyframes circlemove {
+    0%{
+        transform: translate(0px, 0px) rotate(0deg);
+        
+       
+    }
+    25%{
+        transform: translate(300px, 0px) ;
+       
+
+    }
+    50%{
+        transform: translate(300px, 300px) ;
+        
+    }
+    75%{
+        transform: translate(0px, 300px)rotate(360deg);
+    }
+}
+.scrollbar{
+    width: 100vh;
+}
+body::-webkit-scrollbar{
+    background-color: brown;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: aqua;
+    width: 10px !important;
+    border-radius: 10px;
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="circle"></div>
+        <div id="sqr"></div>
+    </div>
+    <div class="scrollbar"></div>
+</body>
+</html>

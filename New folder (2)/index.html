@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Debounce</button>
+  </body>
+  <script>
+    function debouncs(fun, delay) {
+      let context = this;
+      let timeourid;
+      return (...arg) => {
+        clearTimeout(timeourid);
+
+        timeourid = setTimeout(() => {
+          fun.apply(context, arg);
+        }, delay);
+      };
+    }
+    function throttel(func, delay) {
+        let context=this
+            let isthrottel=false;
+            return (...arg)=>{
+                if(!isthrottel) {
+                    func.apply(context,arg)
+                    isthrottel=true
+                    setTimeout(() => {
+                        isthrottel=false
+                        
+                    }, delay);
+                }
+
+            }
+    }
+    document.querySelector("button").addEventListener(
+      "click",
+      throttel(() => {
+        console.log("click button");
+      }, 3000)
+    );
+  </script>
+</html>

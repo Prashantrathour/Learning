@@ -1,0 +1,36 @@
+
+// function pla(str){
+//     return str.split("").reverse().join("")==str
+// }
+
+// console.log(pla("racecar")?"palindrom":"Not palindrom")
+
+
+
+// function acc(str){
+//     let obj={}
+//     for(let i=0;i<str.length;i++){
+//         if(obj[str[i]]==undefined){
+//             obj[str[i]]=1
+//         }else{
+//             obj[str[i]]++
+//         }
+//     }
+//   return obj
+// }
+// for( key in acc("hello")){
+//    console.log( `alpha ${key}--${acc("hello")[key]}`)
+//  }
+// //  Create a function to find the index of the first occurrence of a character in a string
+
+// function first(str,char){
+//     for(let i=0;i<str.length;i++){
+//         if(str[i]==char){
+//             return i
+//         }
+//     }
+//     return "not found character"
+// }
+// console.log(first("hello world","d"))
+
+// memoization

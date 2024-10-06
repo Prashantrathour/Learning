@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="main"></div>
+    <div id="todo"></div>
+  </body>
+  <script>
+       let str="aabbddeswsffdd"
+       let obj={}
+       for(let i=0;i<str.length;i++){
+
+           !obj[str[i]]?obj[str[i]]=1:obj[str[i]]++
+        }
+        let values=Object.values(obj)
+        let key=Object.keys(obj)
+       console.log(values,key)
+       let main=document.getElementById("main");
+       let ul=document.createElement("ul")
+       let ui=key.map((item,i)=>`<li>${item}--${values[i]}</li>`)
+       ul.innerHTML=ui
+       main.append(ul)
+
+       const todo=document.getElementById("todo")
+
+       fetch('https://jsonplaceholder.typicode.com/posts/1/comments')
+          .then(response => response.json())
+          .then(data =>display(data))
+     function display(data){
+        todo.innerHTML=""
+        data.forEach(element => {
+
+            let p=document.createElement("p")
+            let p2=document.createElement("p")
+            let p3=document.createElement("p")
+            let div=document.createElement("div")
+            div.style.border="1px solid red"
+
+            p.innerText = element.name
+            p2.innerText = element.email
+            p3.innerText = element.body
+            div.append(p,p2,p3)
+            todo.appendChild(div)
+        });
+     }
+
+     let string="id3#s lab:or;e ex et quam laborumEliseo@gardner.bizlaudantium enim quasi est quidem magnam voluptate ipsam eostempora quo necessitatibusdolor quam autem quasireiciendis et nam sapiente accusantium"
+    
+  </script>
+</html>
